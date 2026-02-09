@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+    "$basetexture" "blockmaker/healer"
+    "$model" "1"
+}

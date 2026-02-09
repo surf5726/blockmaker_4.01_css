@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+    "$basetexture" "blockmaker/nuke"
+    "$model" "1"
+}

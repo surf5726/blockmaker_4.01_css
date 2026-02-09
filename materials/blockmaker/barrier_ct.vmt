@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+    "$basetexture" "blockmaker/barrier_ct"
+    "$model" "1"
+}

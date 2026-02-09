@@ -1,0 +1,8 @@
+"Sprite"
+{
+    "$basetexture" "sprites/blockmaker/speedboost"
+    "$spriteOrientation" "oriented"
+    "$spriteorigin" "[ 0.5 0.5 ]"
+    "$additive" "1"
+    "$nocull" "1"
+}

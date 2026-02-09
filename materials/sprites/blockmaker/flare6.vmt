@@ -1,0 +1,8 @@
+"Sprite"
+{
+    "$basetexture" "sprites/blockmaker/flare6"
+	"$spriteOrientation" "vp_parallel"
+    "$spriteorigin" "[ 0.5 0.5 ]"
+    "$additive" "1"
+    "$nocull" "1"
+}

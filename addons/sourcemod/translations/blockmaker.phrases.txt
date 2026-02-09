@@ -1,0 +1,707 @@
+"Phrases"
+{
+	// ============== Block Names ==============
+	"Block_Platform"
+	{
+		"en"		"Platform"
+		"chi"		"平台"
+	}
+	"Block_Bunnyhop"
+	{
+		"en"		"Bunnyhop"
+		"chi"		"连跳"
+	}
+	"Block_Damage"
+	{
+		"en"		"Damage"
+		"chi"		"伤害"
+	}
+	"Block_Healer"
+	{
+		"en"		"Healer"
+		"chi"		"治疗"
+	}
+	"Block_NoFallDamage"
+	{
+		"en"		"No Fall Damage"
+		"chi"		"无坠落伤害"
+	}
+	"Block_Ice"
+	{
+		"en"		"Ice"
+		"chi"		"冰块"
+	}
+	"Block_Trampoline"
+	{
+		"en"		"Trampoline"
+		"chi"		"蹦床"
+	}
+	"Block_SpeedBoost"
+	{
+		"en"		"Speed Boost"
+		"chi"		"加速"
+	}
+	"Block_Invincibility"
+	{
+		"en"		"Invincibility"
+		"chi"		"无敌"
+	}
+	"Block_Stealth"
+	{
+		"en"		"Stealth"
+		"chi"		"隐身"
+	}
+	"Block_Death"
+	{
+		"en"		"Death"
+		"chi"		"死亡"
+	}
+	"Block_Nuke"
+	{
+		"en"		"Nuke"
+		"chi"		"核弹"
+	}
+	"Block_Camouflage"
+	{
+		"en"		"Camouflage"
+		"chi"		"伪装"
+	}
+	"Block_LowGravity"
+	{
+		"en"		"Low Gravity"
+		"chi"		"低重力"
+	}
+	"Block_Fire"
+	{
+		"en"		"Fire"
+		"chi"		"火焰"
+	}
+	"Block_Slap"
+	{
+		"en"		"Slap"
+		"chi"		"拍飞"
+	}
+	"Block_Random"
+	{
+		"en"		"Random"
+		"chi"		"随机"
+	}
+	"Block_Honey"
+	{
+		"en"		"Honey"
+		"chi"		"蜂蜜"
+	}
+	"Block_CTBarrier"
+	{
+		"en"		"CT Barrier"
+		"chi"		"CT屏障"
+	}
+	"Block_TBarrier"
+	{
+		"en"		"T Barrier"
+		"chi"		"T屏障"
+	}
+	"Block_BootsOfSpeed"
+	{
+		"en"		"Boots Of Speed"
+		"chi"		"疾跑之靴"
+	}
+	"Block_Glass"
+	{
+		"en"		"Glass"
+		"chi"		"玻璃"
+	}
+	"Block_BhopNoSlow"
+	{
+		"en"		"Bunnyhop (No slow down)"
+		"chi"		"连跳 (无减速)"
+	}
+	"Block_AutoBhop"
+	{
+		"en"		"Auto Bunnyhop"
+		"chi"		"自动连跳"
+	}
+
+	// ============== Size Names ==============
+	"Size_Small"
+	{
+		"en"		"Small"
+		"chi"		"小"
+	}
+	"Size_Normal"
+	{
+		"en"		"Normal"
+		"chi"		"普通"
+	}
+	"Size_Large"
+	{
+		"en"		"Large"
+		"chi"		"大"
+	}
+
+	// ============== Menu Titles ==============
+	"Menu_Main"
+	{
+		"en"		"Block Maker Menu"
+		"chi"		"方块建造菜单"
+	}
+	"Menu_Block"
+	{
+		"en"		"Block Menu"
+		"chi"		"方块菜单"
+	}
+	"Menu_BlockSelection"
+	{
+		"en"		"Block Selection"
+		"chi"		"方块选择"
+	}
+	"Menu_Teleport"
+	{
+		"en"		"Teleporter Menu"
+		"chi"		"传送门菜单"
+	}
+	"Menu_Timer"
+	{
+		"en"		"Timer Menu"
+		"chi"		"计时器菜单"
+	}
+	"Menu_Measure"
+	{
+		"en"		"Measuring Tool"
+		"chi"		"测量工具"
+	}
+	"Menu_LongJump"
+	{
+		"#format"	"{1:d},{2:s}"
+		"en"		"Long Jump Creator\nDistance: {1} | Axis: {2}"
+		"chi"		"跳远创建器\n距离: {1} | 轴: {2}"
+	}
+	"Menu_Options"
+	{
+		"en"		"Options Menu"
+		"chi"		"选项菜单"
+	}
+	"Menu_Confirm_DeleteBlocks"
+	{
+		"en"		"Delete ALL blocks?\nThis cannot be undone!"
+		"chi"		"删除所有方块？\n此操作不可撤销！"
+	}
+	"Menu_Confirm_DeleteTele"
+	{
+		"en"		"Delete ALL teleports?\nThis cannot be undone!"
+		"chi"		"删除所有传送门？\n此操作不可撤销！"
+	}
+	"Menu_Confirm_DeleteTimers"
+	{
+		"en"		"Delete ALL timers?\nThis cannot be undone!"
+		"chi"		"删除所有计时器？\n此操作不可撤销！"
+	}
+	"Menu_Confirm_Load"
+	{
+		"en"		"Load blocks from file?\nThis will replace current blocks!"
+		"chi"		"从文件加载方块？\n这将替换当前所有方块！"
+	}
+
+	// ============== Menu Items ==============
+	"Item_BlockMenu"
+	{
+		"en"		"Block Menu"
+		"chi"		"方块菜单"
+	}
+	"Item_TeleportMenu"
+	{
+		"en"		"Teleport Menu"
+		"chi"		"传送门菜单"
+	}
+	"Item_TimerMenu"
+	{
+		"en"		"Timer Menu"
+		"chi"		"计时器菜单"
+	}
+	"Item_MeasureTool"
+	{
+		"en"		"Measuring Tool"
+		"chi"		"测量工具"
+	}
+	"Item_LongJump"
+	{
+		"en"		"Long Jump Creator"
+		"chi"		"跳远创建器"
+	}
+	"Item_NoclipOn"
+	{
+		"en"		"Noclip: ON"
+		"chi"		"穿墙: 开"
+	}
+	"Item_NoclipOff"
+	{
+		"en"		"Noclip: OFF"
+		"chi"		"穿墙: 关"
+	}
+	"Item_GodmodeOn"
+	{
+		"en"		"Godmode: ON"
+		"chi"		"上帝模式: 开"
+	}
+	"Item_GodmodeOff"
+	{
+		"en"		"Godmode: OFF"
+		"chi"		"上帝模式: 关"
+	}
+	"Item_Options"
+	{
+		"en"		"Options Menu"
+		"chi"		"选项菜单"
+	}
+	"Item_BlockType"
+	{
+		"#format"	"{1:s}"
+		"en"		"Block Type: {1}"
+		"chi"		"方块类型: {1}"
+	}
+	"Item_CreateBlock"
+	{
+		"en"		"Create Block"
+		"chi"		"创建方块"
+	}
+	"Item_ConvertBlock"
+	{
+		"en"		"Convert Block"
+		"chi"		"转换方块"
+	}
+	"Item_DeleteBlock"
+	{
+		"en"		"Delete Block"
+		"chi"		"删除方块"
+	}
+	"Item_RotateBlock"
+	{
+		"en"		"Rotate Block"
+		"chi"		"旋转方块"
+	}
+	"Item_BlockSize"
+	{
+		"#format"	"{1:s}"
+		"en"		"Block Size: {1}"
+		"chi"		"方块大小: {1}"
+	}
+	"Item_TeleStart"
+	{
+		"en"		"Teleport Start"
+		"chi"		"传送起点"
+	}
+	"Item_TeleDest"
+	{
+		"en"		"Teleport Destination"
+		"chi"		"传送终点"
+	}
+	"Item_SwapStartDest"
+	{
+		"en"		"Swap Start/Destination"
+		"chi"		"交换起点/终点"
+	}
+	"Item_DeleteTeleport"
+	{
+		"en"		"Delete Teleport"
+		"chi"		"删除传送门"
+	}
+	"Item_ShowPath"
+	{
+		"en"		"Show Teleport Path"
+		"chi"		"显示传送路径"
+	}
+	"Item_TimerStart"
+	{
+		"en"		"Timer Start"
+		"chi"		"计时起点"
+	}
+	"Item_TimerEnd"
+	{
+		"en"		"Timer End"
+		"chi"		"计时终点"
+	}
+	"Item_SwapStartEnd"
+	{
+		"en"		"Swap Start/End"
+		"chi"		"交换起点/终点"
+	}
+	"Item_DeleteTimer"
+	{
+		"en"		"Delete Timer"
+		"chi"		"删除计时器"
+	}
+	"Item_RotateTimer"
+	{
+		"en"		"Rotate Timer"
+		"chi"		"旋转计时器"
+	}
+	"Item_SelectPos1"
+	{
+		"en"		"Select Position 1"
+		"chi"		"选择位置 1"
+	}
+	"Item_SelectPos2"
+	{
+		"en"		"Select Position 2"
+		"chi"		"选择位置 2"
+	}
+	"Item_MeasureDist"
+	{
+		"en"		"Measure Distance"
+		"chi"		"测量距离"
+	}
+	"Item_ShowBeam"
+	{
+		"en"		"Show Beam"
+		"chi"		"显示光束"
+	}
+	"Item_DistUp"
+	{
+		"en"		"Distance +"
+		"chi"		"距离 +"
+	}
+	"Item_CreateLJ"
+	{
+		"en"		"Create Long Jump"
+		"chi"		"创建跳远方块"
+	}
+	"Item_DistDown"
+	{
+		"en"		"Distance -"
+		"chi"		"距离 -"
+	}
+	"Item_RotateAxis"
+	{
+		"en"		"Rotate Axis"
+		"chi"		"旋转轴"
+	}
+	"Item_Snapping"
+	{
+		"#format"	"{1:s}"
+		"en"		"Snapping: {1}"
+		"chi"		"吸附: {1}"
+	}
+	"Item_SnappingGap"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Snapping Gap: {1}"
+		"chi"		"吸附间距: {1}"
+	}
+	"Item_AddGroup"
+	{
+		"en"		"Add to Group"
+		"chi"		"添加到组"
+	}
+	"Item_ClearGroup"
+	{
+		"en"		"Clear Group"
+		"chi"		"清空组"
+	}
+	"Item_DeleteAllBlocks"
+	{
+		"en"		"Delete All Blocks"
+		"chi"		"删除所有方块"
+	}
+	"Item_DeleteAllTele"
+	{
+		"en"		"Delete All Teleports"
+		"chi"		"删除所有传送门"
+	}
+	"Item_DeleteAllTimers"
+	{
+		"en"		"Delete All Timers"
+		"chi"		"删除所有计时器"
+	}
+	"Item_Save"
+	{
+		"en"		"Save to File"
+		"chi"		"保存到文件"
+	}
+	"Item_Load"
+	{
+		"en"		"Load from File"
+		"chi"		"从文件加载"
+	}
+	"Item_Yes"
+	{
+		"en"		"Yes, proceed"
+		"chi"		"是，继续"
+	}
+	"Item_No"
+	{
+		"en"		"No, cancel"
+		"chi"		"否，取消"
+	}
+	"ON"
+	{
+		"en"		"ON"
+		"chi"		"开"
+	}
+	"OFF"
+	{
+		"en"		"OFF"
+		"chi"		"关"
+	}
+
+	// ============== Chat Messages ==============
+	"Timer_Restarted"
+	{
+		"en"		"Timer Re-started."
+		"chi"		"计时器已重置。"
+	}
+	"Timer_Started"
+	{
+		"en"		"Timer Started."
+		"chi"		"计时器已启动。"
+	}
+	"Timer_Completed"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"'{1}' just completed the course in {2}"
+		"chi"		"'{1}' 完成了赛道，用时 {2}"
+	}
+	"Timer_Fastest"
+	{
+		"#format"	"{1:s}"
+		"en"		"'{1}' is now the fastest player on the course!"
+		"chi"		"'{1}' 现在是赛道最快的玩家！"
+	}
+	"Timer_Rank"
+	{
+		"#format"	"{1:s},{2:d}"
+		"en"		"'{1}' is now rank {2} on the scoreboard"
+		"chi"		"'{1}' 现在排名第 {2} 名"
+	}
+	"Block_TypeSet"
+	{
+		"#format"	"{1:s}"
+		"en"		"Block type set to: {1}"
+		"chi"		"方块类型已设为: {1}"
+	}
+	"Position1_Set"
+	{
+		"en"		"Position 1 set."
+		"chi"		"位置 1 已设定。"
+	}
+	"Position2_Set"
+	{
+		"en"		"Position 2 set."
+		"chi"		"位置 2 已设定。"
+	}
+	"Measure_Distance"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Distance: {1} units"
+		"chi"		"距离: {1} 单位"
+	}
+	"Measure_XYZ"
+	{
+		"#format"	"{1:.1f},{2:.1f},{3:.1f}"
+		"en"		"X: {1} | Y: {2} | Z: {3}"
+		"chi"		"X: {1} | Y: {2} | Z: {3}"
+	}
+	"Select_Both"
+	{
+		"en"		"Select both positions first!"
+		"chi"		"请先选择两个位置！"
+	}
+	"Action_Cancelled"
+	{
+		"en"		"Action cancelled."
+		"chi"		"操作已取消。"
+	}
+	"Timer_Deleted_Count"
+	{
+		"#format"	"{1:d}"
+		"en"		"Deleted {1} timer entities."
+		"chi"		"已删除 {1} 个计时器。"
+	}
+	"Block_NoRotate"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1} blocks cannot be rotated!"
+		"chi"		"{1} 方块不能旋转！"
+	}
+	"Block_AddedGroup"
+	{
+		"#format"	"{1:d}"
+		"en"		"Block added to group ({1} blocks)"
+		"chi"		"方块已添加到组 ({1} 个方块)"
+	}
+	"Group_Cleared"
+	{
+		"en"		"Group cleared"
+		"chi"		"组已清空"
+	}
+	"No_Teleport_Nearby"
+	{
+		"en"		"No teleport found nearby!"
+		"chi"		"附近没有找到传送门！"
+	}
+	"Teleport_Swapped"
+	{
+		"en"		"Teleport start/end swapped!"
+		"chi"		"传送门起点/终点已交换！"
+	}
+	"Timer_Swapped"
+	{
+		"en"		"Timer start/end swapped!"
+		"chi"		"计时器起点/终点已交换！"
+	}
+	"Timer_Rotated"
+	{
+		"en"		"Timer rotated!"
+		"chi"		"计时器已旋转！"
+	}
+	"Teleport_Deleted"
+	{
+		"en"		"Teleport deleted!"
+		"chi"		"传送门已删除！"
+	}
+	"Teleport_Path"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Teleport path shown. Distance: {1} units."
+		"chi"		"传送路径已显示。距离: {1} 单位。"
+	}
+	"Timer_Deleted_Single"
+	{
+		"en"		"Timer deleted!"
+		"chi"		"计时器已删除！"
+	}
+	"Deleted_All_Blocks"
+	{
+		"#format"	"{1:s},{2:d}"
+		"en"		"'{1}' deleted all blocks ({2})"
+		"chi"		"'{1}' 删除了所有方块 ({2})"
+	}
+	"Deleted_All_Teleports"
+	{
+		"#format"	"{1:s},{2:d}"
+		"en"		"'{1}' deleted all teleports ({2})"
+		"chi"		"'{1}' 删除了所有传送门 ({2})"
+	}
+	"Save_Failed"
+	{
+		"en"		"Failed to open file for saving!"
+		"chi"		"保存文件打开失败！"
+	}
+	"Save_Success"
+	{
+		"#format"	"{1:s},{2:d},{3:d},{4:d}"
+		"en"		"'{1}' saved {2} blocks, {3} teleports, {4} timers!"
+		"chi"		"'{1}' 保存了 {2} 个方块、{3} 个传送门、{4} 个计时器！"
+	}
+	"No_Save_File"
+	{
+		"en"		"No save file found for this map."
+		"chi"		"未找到此地图的存档文件。"
+	}
+	"Load_Success"
+	{
+		"#format"	"{1:s},{2:d},{3:d},{4:d}"
+		"en"		"'{1}' loaded {2} blocks, {3} teleports, {4} timers!"
+		"chi"		"'{1}' 加载了 {2} 个方块、{3} 个传送门、{4} 个计时器！"
+	}
+
+	// ============== Hint Text ==============
+	"Hint_BlockType"
+	{
+		"#format"	"{1:s}"
+		"en"		"Block Type: {1}"
+		"chi"		"方块类型: {1}"
+	}
+	"Hint_InvincibilityCD"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Invincibility next use: {1}"
+		"chi"		"无敌冷却: {1}"
+	}
+	"Hint_StealthCD"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Stealth next use: {1}"
+		"chi"		"隐身冷却: {1}"
+	}
+	"Hint_NukeCD"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Nuke next use: {1}"
+		"chi"		"核弹冷却: {1}"
+	}
+	"Hint_CamouflageCD"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Camouflage next use: {1}"
+		"chi"		"伪装冷却: {1}"
+	}
+	"Hint_RandomCD"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Random block next use: {1}"
+		"chi"		"随机方块冷却: {1}"
+	}
+	"Hint_BootsCD"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Boots of speed next use: {1}"
+		"chi"		"疾跑之靴冷却: {1}"
+	}
+	"Hint_AutoBhopCD"
+	{
+		"#format"	"{1:.1f}"
+		"en"		"Auto bunnyhop next use: {1}"
+		"chi"		"自动连跳冷却: {1}"
+	}
+
+	// ===== HUD Buff Display =====
+	"Hud_Invincible"
+	{
+		"en"		"Invincible"
+		"chi"		"无敌"
+	}
+	"Hud_Stealth"
+	{
+		"en"		"Stealth"
+		"chi"		"隐身"
+	}
+	"Hud_CamoT"
+	{
+		"en"		"You look like a Terrorist"
+		"chi"		"你看起来像恐怖分子"
+	}
+	"Hud_CamoCT"
+	{
+		"en"		"You look like a Counter-Terrorist"
+		"chi"		"你看起来像反恐精英"
+	}
+	"Hud_BootsOfSpeed"
+	{
+		"en"		"Boots of speed"
+		"chi"		"疾跑之靴"
+	}
+	"Hud_AutoBhop"
+	{
+		"en"		"Auto bunnyhop"
+		"chi"		"自动连跳"
+	}
+
+	// ===== Center Text =====
+	"Nuke_CT"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1} just nuked the Counter-Terrorists"
+		"chi"		"{1} 核爆了反恐精英"
+	}
+	"Nuke_T"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1} just nuked the Terrorists"
+		"chi"		"{1} 核爆了恐怖分子"
+	}
+	"Slap_Message"
+	{
+		"en"		"GET OFF MY FACE!!!"
+		"chi"		"滚开！！！"
+	}
+}

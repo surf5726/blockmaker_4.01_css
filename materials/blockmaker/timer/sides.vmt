@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+    "$basetexture" "blockmaker/timer/sides"
+    "$model" "1"
+}

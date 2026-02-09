@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+    "$basetexture" "blockmaker/timer/start"
+    "$model" "1"
+}

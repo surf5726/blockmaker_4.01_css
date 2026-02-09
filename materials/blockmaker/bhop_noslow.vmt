@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+    "$basetexture" "blockmaker/bhop_noslow"
+    "$model" "1"
+}
