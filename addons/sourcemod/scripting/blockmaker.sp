@@ -1,5 +1,5 @@
 /**
- * Block Maker v4.02 - SourceMod Port
+ * Block Maker v4.01 - SourceMod Port
  * Original by Necro (AMX Mod X)
  * Ported to SourceMod for Counter-Strike: Source
  *
@@ -15,7 +15,7 @@
 #pragma newdecls required
 
 #define PLUGIN_NAME "blockmaker"
-#define PLUGIN_VERSION "4.02"
+#define PLUGIN_VERSION "4.01"
 #define PLUGIN_AUTHOR "Necro (SM Port)"
 #define BM_ADMIN_FLAG ADMFLAG_CUSTOM1  // flag 'o', change as needed
 
