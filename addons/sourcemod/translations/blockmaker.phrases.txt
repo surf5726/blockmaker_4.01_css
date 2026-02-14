@@ -387,16 +387,6 @@
 		"en"		"Snapping Gap: {1}"
 		"chi"		"吸附间距: {1}"
 	}
-	"Item_AddGroup"
-	{
-		"en"		"Add to Group"
-		"chi"		"添加到组"
-	}
-	"Item_ClearGroup"
-	{
-		"en"		"Clear Group"
-		"chi"		"清空组"
-	}
 	"Item_DeleteAllBlocks"
 	{
 		"en"		"Delete All Blocks"
@@ -521,17 +511,6 @@
 		"#format"	"{1:s}"
 		"en"		"{1} blocks cannot be rotated!"
 		"chi"		"{1} 方块不能旋转！"
-	}
-	"Block_AddedGroup"
-	{
-		"#format"	"{1:d}"
-		"en"		"Block added to group ({1} blocks)"
-		"chi"		"方块已添加到组 ({1} 个方块)"
-	}
-	"Group_Cleared"
-	{
-		"en"		"Group cleared"
-		"chi"		"组已清空"
 	}
 	"No_Teleport_Nearby"
 	{

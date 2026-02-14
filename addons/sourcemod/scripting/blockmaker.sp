@@ -1,5 +1,5 @@
 /**
- * Block Maker v4.01 - SourceMod Port
+ * Block Maker v4.02 - SourceMod Port
  * Original by Necro (AMX Mod X)
  * Ported to SourceMod for Counter-Strike: Source
  *
@@ -15,14 +15,13 @@
 #pragma newdecls required
 
 #define PLUGIN_NAME "blockmaker"
-#define PLUGIN_VERSION "4.01"
+#define PLUGIN_VERSION "4.02"
 #define PLUGIN_AUTHOR "Necro (SM Port)"
 #define BM_ADMIN_FLAG ADMFLAG_CUSTOM1  // flag 'o', change as needed
 
 // ============== CONSTANTS ==============
 #define MAX_BLOCKS 24
 #define MAXPLAYERS_CONST 65
-#define MAX_GROUP_BLOCKS 256
 #define MAX_SCORE_ENTRIES 15
 
 static const float SNAP_DISTANCE = 10.0;
@@ -233,8 +232,6 @@ int g_TeleportStart[MAXPLAYERS_CONST];
 int g_iLastAimedBlock[MAXPLAYERS_CONST];
 int g_StartTimer[MAXPLAYERS_CONST];
 int g_Grabbed[MAXPLAYERS_CONST];
-int g_GroupedBlocks[MAXPLAYERS_CONST][MAX_GROUP_BLOCKS];
-int g_GroupCount[MAXPLAYERS_CONST];
 int g_MeasureBlock1[MAXPLAYERS_CONST];
 int g_MeasureBlock2[MAXPLAYERS_CONST];
 int g_LongJumpDistance[MAXPLAYERS_CONST];
@@ -258,7 +255,6 @@ float g_fGrabOffset[MAXPLAYERS_CONST][3];
 float g_fNextHealTime[MAXPLAYERS_CONST];
 float g_fNextDamageTime[MAXPLAYERS_CONST];
 float g_fNextFireTime[MAXPLAYERS_CONST];
-float g_fFireFlameTime[MAXPLAYERS_CONST];
 float g_fInvincibleNextUse[MAXPLAYERS_CONST];
 float g_fInvincibleTimeOut[MAXPLAYERS_CONST];
 float g_fStealthNextUse[MAXPLAYERS_CONST];
@@ -599,7 +595,6 @@ public void OnClientPutInServer(int client)
     g_bNoFallDamage[client] = false;
     g_bAdminGodmode[client] = false;
     g_bAdminNoclip[client] = false;
-    g_GroupCount[client] = 0;
     g_LongJumpDistance[client] = 240;
     g_LongJumpAxis[client] = AXIS_X;
     g_SelectedBlockType[client] = BM_PLATFORM;
@@ -619,8 +614,6 @@ public void OnClientPutInServer(int client)
 
 public void OnClientDisconnect(int client)
 {
-    GroupClear(client, false);
-    
     if (g_Grabbed[client] != INVALID_ENT_REFERENCE) {
         int ent = EntRefToEntIndex(g_Grabbed[client]);
         if (ent != INVALID_ENT_REFERENCE && IsValidEntity(ent)) {
@@ -650,7 +643,6 @@ void ResetPlayerEffects(int client)
     g_fNextHealTime[client] = 0.0;
     g_fNextDamageTime[client] = 0.0;
     g_fNextFireTime[client] = 0.0;
-    g_fFireFlameTime[client] = 0.0;
     g_fTrampolineTimeout[client] = 0.0;
     g_fSpeedBoostTimeOut[client] = 0.0;
     g_bOnIce[client] = false;
@@ -2455,13 +2447,13 @@ void MoveGrabbedEntity(int client, int ent)
         }
     }
     
-    // Handle +jump (move closer) and +duck (move further) while grabbing
+    // Handle W (push further) and S (pull closer) while grabbing
     int buttons = GetClientButtons(client);
-    if (buttons & IN_JUMP && g_fGrabLength[client] > 72.0) {
-        g_fGrabLength[client] -= 2.0;
-    }
-    if (buttons & IN_DUCK) {
+    if (buttons & IN_FORWARD) {
         g_fGrabLength[client] += 2.0;
+    }
+    if (buttons & IN_BACK && g_fGrabLength[client] > 72.0) {
+        g_fGrabLength[client] -= 2.0;
     }
     
     // Attack2 = delete while grabbing
@@ -3021,8 +3013,6 @@ void ShowOptionsMenu(int client)
     Format(szItem, sizeof(szItem), "%T", "Item_SnappingGap", client, g_fSnappingGap[client]);
     menu.AddItem("gap", szItem);
     
-    Format(szItem, sizeof(szItem), "%T", "Item_AddGroup", client); menu.AddItem("group", szItem);
-    Format(szItem, sizeof(szItem), "%T", "Item_ClearGroup", client); menu.AddItem("groupclear", szItem);
     Format(szItem, sizeof(szItem), "%T", "Item_DeleteAllBlocks", client); menu.AddItem("delblocks", szItem);
     Format(szItem, sizeof(szItem), "%T", "Item_DeleteAllTele", client); menu.AddItem("deltele", szItem);
     Format(szItem, sizeof(szItem), "%T", "Item_DeleteAllTimers", client); menu.AddItem("deltimers", szItem);
@@ -3050,8 +3040,6 @@ public int Handle_OptionsMenu(Menu menu, MenuAction action, int client, int item
         g_fSnappingGap[client] += 4.0;
         if (g_fSnappingGap[client] > 40.0) g_fSnappingGap[client] = 0.0;
     }
-    else if (StrEqual(szInfo, "group")) { GroupBlockAiming(client); }
-    else if (StrEqual(szInfo, "groupclear")) { GroupClear(client, true); }
     else if (StrEqual(szInfo, "delblocks")) { ShowConfirmMenu(client, CONFIRM_DELETE_ALL); return 0; }
     else if (StrEqual(szInfo, "deltele")) { ShowConfirmMenu(client, CONFIRM_DELETE_TELE); return 0; }
     else if (StrEqual(szInfo, "deltimers")) { ShowConfirmMenu(client, CONFIRM_DELETE_TIMERS); return 0; }
@@ -3300,40 +3288,6 @@ void LongJumpCreate(int client)
     
     CreateBlockEntity(client, BM_PLATFORM, origin1, AXIS_Z, g_BlockSize[client]);
     CreateBlockEntity(client, BM_PLATFORM, origin2, AXIS_Z, g_BlockSize[client]);
-}
-
-void GroupBlockAiming(int client)
-{
-    if (!IsAdmin(client)) return;
-    
-    int ent = GetClientAimEntity(client, 320.0);
-    int blockIdx;
-    if (ent > 0 && IsBlockEntity(ent, blockIdx)) {
-        if (g_GroupCount[client] < MAX_GROUP_BLOCKS) {
-            g_GroupedBlocks[client][g_GroupCount[client]] = EntIndexToEntRef(ent);
-            g_GroupCount[client]++;
-            SetEntityRenderFx(ent, RENDERFX_DISTORT);
-            SetEntityRenderColor(ent, 255, 0, 0, 255);
-            PrintToChat(client, "%s%T", PREFIX, "Block_AddedGroup", client, g_GroupCount[client]);
-        }
-    }
-}
-
-void GroupClear(int client, bool notify)
-{
-    for (int i = 0; i < g_GroupCount[client]; i++) {
-        int entRef = g_GroupedBlocks[client][i];
-        int ent = EntRefToEntIndex(entRef);
-        if (ent != INVALID_ENT_REFERENCE && IsValidEntity(ent)) {
-            int blockIdx;
-            if (IsBlockEntity(ent, blockIdx)) {
-                int blockType = g_BlockTypes.Get(blockIdx);
-                ApplyBlockRendering(ent, blockType);
-            }
-        }
-    }
-    g_GroupCount[client] = 0;
-    if (notify) PrintToChat(client, "%s%T", PREFIX, "Group_Cleared", client);
 }
 
 void SwapTeleportAiming(int client)
@@ -3905,6 +3859,13 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 {
     if (!IsPlayerAlive(client)) return Plugin_Continue;
     
+    // Suppress W/S player movement while grabbing - keys only control block distance
+    if (g_Grabbed[client] != INVALID_ENT_REFERENCE) {
+        if (buttons & (IN_FORWARD | IN_BACK)) {
+            vel[0] = 0.0;
+        }
+    }
+    
     // Auto bhop
     if (g_bAutoBhop[client] && (buttons & IN_JUMP)) {
         if (!(GetEntityFlags(client) & FL_ONGROUND)) {
@@ -3912,9 +3873,6 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
         }
     }
     
-    // Timer activation via weapon switch (original used EmitSound forward for wpn_select)
-    // In CS:S we use impulse 100 (flashlight) or a different approach
-    // Using +use (E key) near timer entities
     // Timer activation via +use (E key) near timer entities - only on key press
     if ((buttons & IN_USE) && !(g_iLastButtons[client] & IN_USE)) {
         ActionTimerCheck(client);
