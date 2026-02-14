@@ -1,5 +1,5 @@
 # blockmaker_4.01_css
-Blockmaker 4.01 ported for Counter-Strike: Source
+A full migration of the original CS 1.6 Blockmaker 4.01 plugin (by Necro, AMXX)
 
 ## Features:
 - Say !bm in chat to bring up the main menu.
