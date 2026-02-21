@@ -4,7 +4,7 @@ A full migration of the original CS 1.6 Blockmaker 4.01 plugin (by Necro, AMXX),
 ## Features:
 - Say !bm in chat to bring up the main menu.
 - Bind a key to +bmgrab to move the blocks around.
-- While grabbing a block, jump to move a block closer, and duck to move a block further away.
+- While grabbing a block, duck to move a block closer, and jump to move a block further away.
 - Create a block by aiming at the floor or a wall.
 - Convert block you are aiming at to the selected block type.
 - Delete block you are aiming at.
