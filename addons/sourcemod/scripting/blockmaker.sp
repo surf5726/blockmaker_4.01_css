@@ -2059,21 +2059,6 @@ int CreateBlockSprite(int parentEnt, int blockType, int size = SIZE_NORMAL)
             bCreate = true;
             bOriented = true;
         }
-        case BM_INVINCIBILITY: {
-            // Effect is in model material, no sprite needed
-        }
-        case BM_DEATH: {
-            // No sprite
-        }
-        case BM_NUKE: {
-            // No sprite
-        }
-        case BM_BOOTSOFSPEED: {
-            // No sprite
-        }
-        case BM_AUTOBHOP: {
-            // No sprite
-        }
     }
     
     if (!bCreate) return INVALID_ENT_REFERENCE;
