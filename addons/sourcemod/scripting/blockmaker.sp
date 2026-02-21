@@ -2447,7 +2447,7 @@ void MoveGrabbedEntity(int client, int ent)
         }
     }
     
-    // Handle W (push further) and S (pull closer) while grabbing
+    // Handle jump (push further) and duck (pull closer) while grabbing
     int buttons = GetClientButtons(client);
     if (buttons & IN_JUMP) {
         g_fGrabLength[client] += 2.0;
