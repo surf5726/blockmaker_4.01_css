@@ -2449,10 +2449,10 @@ void MoveGrabbedEntity(int client, int ent)
     
     // Handle W (push further) and S (pull closer) while grabbing
     int buttons = GetClientButtons(client);
-    if (buttons & IN_FORWARD) {
+    if (buttons & IN_JUMP) {
         g_fGrabLength[client] += 2.0;
     }
-    if (buttons & IN_BACK && g_fGrabLength[client] > 72.0) {
+    if (buttons & IN_DUCK && g_fGrabLength[client] > 72.0) {
         g_fGrabLength[client] -= 2.0;
     }
     
@@ -3858,13 +3858,6 @@ void LoadBlocks(int client)
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
     if (!IsPlayerAlive(client)) return Plugin_Continue;
-    
-    // Suppress W/S player movement while grabbing - keys only control block distance
-    if (g_Grabbed[client] != INVALID_ENT_REFERENCE) {
-        if (buttons & (IN_FORWARD | IN_BACK)) {
-            vel[0] = 0.0;
-        }
-    }
     
     // Auto bhop
     if (g_bAutoBhop[client] && (buttons & IN_JUMP)) {
